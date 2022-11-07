@@ -1,8 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-thumbnail>
-      <img style="width: 30px; height: 30px;" src="assets/sga.png" alt="Logo">
-    </ion-thumbnail>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/login">
+        <ion-icon slot="icon-only" name="log-in-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <img width="70" src="assets/sga.png" alt="Logo">
   </ion-toolbar>
 </ion-header>
 

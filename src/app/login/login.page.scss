@@ -13,7 +13,7 @@
 
     .logo {
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .inputs {
@@ -23,6 +23,11 @@
       ion-item:nth-child(1) {
         margin-bottom: 10px;
       }
+    }
+
+    .login-btn {
+      margin-top: 30px;
+      --border-radius: 100px;
     }
   }
 }
