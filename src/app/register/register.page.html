@@ -1,9 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <section class="container">
+    <div class="card">
+      <div class="logo">
+        <img src="assets/sga.png" alt="Logo_SGA">
+      </div>
+      <div class="inputs">
+        <ion-item>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input class="custom" type="text" placeholder="Your Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input class="custom" type="email" placeholder="example@gmail.com"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">CPF</ion-label>
+          <ion-input class="custom" type="text" placeholder="XXX.XXX.XXX-XX"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input class="custom" type="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirm</ion-label>
+          <ion-input class="custom" type="password" placeholder="Confirm Password"></ion-input>
+        </ion-item>
+      </div>
+      <ion-button class="register-btn" expand="block">Register</ion-button>
+      <div class="others-options">
+        <p><a routerLink="/login">Já tem uma conta?</a></p>
+      </div>
+    </div>
+  </section>
 </ion-content>
