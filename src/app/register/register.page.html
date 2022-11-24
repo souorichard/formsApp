@@ -16,29 +16,29 @@
       <div class="logo">
         <img src="assets/sga.png" alt="Logo_SGA">
       </div>
-      <div class="inputs">
+      <form [formGroup]="formRegister" class="inputs">
         <ion-item>
           <ion-label position="floating">Name</ion-label>
-          <ion-input class="custom" type="text" placeholder="Your Name"></ion-input>
+          <ion-input formControlName="name" class="custom" type="text" placeholder="Your Name"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Email</ion-label>
-          <ion-input class="custom" type="email" placeholder="example@gmail.com"></ion-input>
+          <ion-input formControlName="email" class="custom" type="email" placeholder="example@gmail.com"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">CPF</ion-label>
-          <ion-input class="custom" type="text" placeholder="XXX.XXX.XXX-XX"></ion-input>
+          <ion-input formControlName="cpf" class="custom" type="text" placeholder="XXX.XXX.XXX-XX"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-          <ion-input class="custom" type="password" placeholder="Password"></ion-input>
+          <ion-input formControlName="password" class="custom" type="password" placeholder="Password"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Confirm</ion-label>
-          <ion-input class="custom" type="password" placeholder="Confirm Password"></ion-input>
+          <ion-input formControlName="passwordConfirm" class="custom" type="password" placeholder="Confirm Password"></ion-input>
         </ion-item>
-      </div>
-      <ion-button class="btn" expand="block">Register</ion-button>
+      </form>
+      <ion-button class="btn" (click)="saveRegister()" expand="block">Register</ion-button>
       <div class="others-options">
         <p><a routerLink="/login">Já tem uma conta?</a></p>
       </div>
