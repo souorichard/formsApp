@@ -78,6 +78,12 @@ ion-tab-bar {
       ion-item {
         margin-bottom: 10px;
         --border-radius: 10px;
+
+        .msg-error {
+          font-size: 10px;
+          padding-bottom: 5px;
+          color: #ff0000;
+        }
       }
 
       ion-item:last-child {

@@ -20,22 +20,47 @@
         <ion-item>
           <ion-label position="floating">Name</ion-label>
           <ion-input formControlName="name" class="custom" type="text" placeholder="Your Name"></ion-input>
+          <ng-container *ngFor="let erro of msgs.name">
+            <span *ngIf="formRegister.get('name').hasError(erro.type) && (formRegister.get('name').dirty || formRegister.get('name').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Email</ion-label>
           <ion-input formControlName="email" class="custom" type="email" placeholder="example@gmail.com"></ion-input>
+          <ng-container *ngFor="let erro of msgs.email">
+            <span *ngIf="formRegister.get('email').hasError(erro.type) && (formRegister.get('email').dirty || formRegister.get('email').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
         </ion-item>
         <ion-item>
           <ion-label position="floating">CPF</ion-label>
           <ion-input formControlName="cpf" class="custom" type="text" placeholder="XXX.XXX.XXX-XX"></ion-input>
+          <ng-container *ngFor="let erro of msgs.cpf">
+            <span *ngIf="formRegister.get('cpf').hasError(erro.type) && (formRegister.get('cpf').dirty || formRegister.get('cpf').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Password</ion-label>
           <ion-input formControlName="password" class="custom" type="password" placeholder="Password"></ion-input>
+          <ng-container *ngFor="let erro of msgs.password">
+            <span *ngIf="formRegister.get('password').hasError(erro.type) && (formRegister.get('password').dirty || formRegister.get('password').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Confirm</ion-label>
           <ion-input formControlName="passwordConfirm" class="custom" type="password" placeholder="Confirm Password"></ion-input>
+          <ng-container *ngFor="let erro of msgs.passwordConfirm">
+            <span *ngIf="formRegister.get('passwordConfirm').hasError(erro.type) && (formRegister.get('passwordConfirm').dirty || formRegister.get('passwordConfirm').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
         </ion-item>
       </form>
       <ion-button class="btn" (click)="saveRegister()" expand="block">Register</ion-button>
