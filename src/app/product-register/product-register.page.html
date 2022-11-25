@@ -1,9 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>product-register</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Product Registration</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="container">
+    <div class="card">
+      <div class="logo">
+        <img src="assets/sga.png" alt="Logo_SGA">
+      </div>
+      <form [formGroup]="formProduct" class="inputs">
+        <ion-item>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input formControlName="name" class="custom" type="text" placeholder="Name Product"></ion-input>
+          <ng-container *ngFor="let erro of msgs.name">
+            <span *ngIf="formProduct.get('name').hasError(erro.type) && (formProduct.get('name').dirty || formProduct.get('name').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="description" class="custom" type="text" placeholder="Description"></ion-input>
+          <ng-container *ngFor="let erro of msgs.description">
+            <span *ngIf="formProduct.get('description').hasError(erro.type) && (formProduct.get('description').dirty || formProduct.get('description').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Validity</ion-label>
+          <ion-input formControlName="validity" class="custom" type="date" placeholder=""></ion-input>
+          <ng-container *ngFor="let erro of msgs.validity">
+            <span *ngIf="formProduct.get('validity').hasError(erro.type) && (formProduct.get('validity').dirty || formProduct.get('validity').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Price</ion-label>
+          <ion-input formControlName="price" class="custom" type="text" placeholder="Price"></ion-input>
+          <ng-container *ngFor="let erro of msgs.price">
+            <span *ngIf="formProduct.get('price').hasError(erro.type) && (formProduct.get('price').dirty || formProduct.get('price').touched)" class="msg-error">
+              {{ erro.msg }}
+            </span>
+          </ng-container>
+        </ion-item>
+      </form>
+      <ion-button class="btn" (click)="saveProduct()" expand="block">Register Product</ion-button>
+    </div>
+  </div>
 </ion-content>

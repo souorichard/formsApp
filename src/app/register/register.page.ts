@@ -68,7 +68,7 @@ export class RegisterPage implements OnInit {
 
       await this.storageService.set(this.user.email, this.user);
 
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/login');
     }
     else {
       this.presentAlert();
