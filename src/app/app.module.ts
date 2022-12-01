@@ -1,4 +1,3 @@
-import { StorageService } from './services/storage.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -8,6 +7,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [AppComponent],

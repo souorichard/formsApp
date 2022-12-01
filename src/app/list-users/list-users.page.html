@@ -19,7 +19,7 @@
             <div class="information">
               <h1 class="title">{{ user.name }}</h1>
               <a class="email" href="mailto:{{user.email}}">{{user.email}}</a>
-              <span class="cpf">{{ user.cpf }}</span>
+              <span class="cpf">{{ user.cpf | cpf }}</span>
             </div>
           </ion-label>
         </ion-item>
