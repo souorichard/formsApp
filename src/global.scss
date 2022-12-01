@@ -39,6 +39,15 @@ a {
 
 ion-toolbar {
   --background: var(--primary);
+
+  ion-buttons {
+    ion-button {
+      span {
+        font-size: 10px;
+        padding-right: 5px;
+      }
+    }
+  }
 }
 
 ion-tab-bar {
@@ -113,5 +122,14 @@ ion-tab-bar {
         font-size: .6rem;
       }
     }
+  }
+}
+
+.error-alert {
+  --backdrop-opacity: 0.7;
+
+  .alert-title {
+    color: #ff0000;
+    letter-spacing: 2px;
   }
 }

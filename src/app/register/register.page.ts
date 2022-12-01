@@ -68,7 +68,7 @@ export class RegisterPage implements OnInit {
 
       await this.storageService.set(this.user.email, this.user);
 
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/home');
     }
     else {
       this.presentAlert();
@@ -80,6 +80,7 @@ export class RegisterPage implements OnInit {
       header: 'ALERT!',
       message: 'Error in user register.',
       buttons: ['OK'],
+      cssClass: 'error-alert'
     });
 
     await alert.present();

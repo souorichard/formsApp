@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
-
   private _storage: Storage | null = null;
 
-  constructor( private storage: Storage ) {
+  constructor(private storage: Storage) {
     this.init();
   }
 
@@ -32,8 +31,10 @@ export class StorageService {
 
   public getAll() {
     const list = [];
+    console.log(this._storage);
     this._storage.forEach((value, key, index) => {
-      list.push();
+      list.push(value);
     });
+    return list;
   }
 }

@@ -1,3 +1,4 @@
+import { StorageService } from './services/storage.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -15,10 +16,13 @@ import { AppComponent } from './app.component';
     IonicModule.forRoot(),
     AppRoutingModule,
     IonicStorageModule.forRoot({
-      driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
-    })
+      driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage],
+    }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    StorageService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
