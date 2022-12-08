@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { User } from '../models/User';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +10,23 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor( private router: Router ) { }
+  listUsers: User[] = [];
+
+  constructor(private storageService: StorageService) {}
 
   ngOnInit() {
   }
 
-  viewList() {
-    this.router.navigate(['/list-users']);
+  async searchUsers() {
+    this.listUsers = (await this.storageService.getAll()) as User[];
+  }
+
+  ionViewDidEnter() {
+    this.searchUsers();
+  }
+
+  async deleteUser(email: string) {
+    this.storageService.remove(email);
   }
 
 }

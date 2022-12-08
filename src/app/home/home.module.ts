@@ -6,9 +6,10 @@ import { IonicModule } from '@ionic/angular';
 import { StorageService } from '../services/storage.service';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
+import { CpfPipe } from './cpf.pipe';
 
 @NgModule({
-  declarations: [HomePage],
+  declarations: [HomePage, CpfPipe],
   imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
   providers: [StorageService],
 })

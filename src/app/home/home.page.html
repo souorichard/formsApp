@@ -2,14 +2,35 @@
   <ion-toolbar>
     <img width="90" src="assets/sga.png" alt="Logo">
     <ion-buttons slot="end">
-      <ion-button (click)="viewList()">
-        <span>List of Clients</span>
-        <ion-icon name="people-outline"></ion-icon>
+      <ion-button>
+        <span>Sign Out</span>
+        <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container"></div>
+  <div class="container">
+    <div class="list-card">
+      <ion-item-sliding *ngFor="let user of listUsers">
+        <ion-item>
+          <ion-label>
+            <ion-icon name="reader-outline"></ion-icon>
+            <div class="information">
+              <h1 class="title">{{ user.name }}</h1>
+              <a class="email" href="mailto:{{user.email}}">{{user.email}}</a>
+              <span class="cpf">{{ user.cpf | cpf }}</span>
+            </div>
+          </ion-label>
+        </ion-item>
+
+        <ion-item-options slot="end">
+          <ion-item-option color="danger" (click)="deleteUser(user.email)">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </div>
 </ion-content>
