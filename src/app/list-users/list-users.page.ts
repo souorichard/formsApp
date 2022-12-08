@@ -24,4 +24,8 @@ export class ListUsersPage implements OnInit {
     this.searchUsers();
   }
 
+  async deleteUser(email: string) {
+    this.storageService.remove(email);
+  }
+
 }
